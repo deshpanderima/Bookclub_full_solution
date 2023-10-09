@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
-COPY --from=build /target/Bookclub-0.0.1-SNAPSHOT.jar Bookclub.jar
+COPY --from=build /target/bookclub-0.0.1-SNAPSHOT.jar bookclub.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","Bookclub.jar"]
+ENTRYPOINT ["java","-jar","bookclub.jar"]
